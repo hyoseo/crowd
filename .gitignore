@@ -37,3 +37,5 @@ out/
 .vscode/
 /src/main/resources/static/plugins/
 /src/main/resources/static/dist/
+/src/main/resources/application-secret.properties
+/logs/
