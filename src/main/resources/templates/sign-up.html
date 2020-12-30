@@ -37,7 +37,7 @@
 <!--          </div>-->
 <!--        </div>-->
         <div class="input-group mb-3 form-group">
-          <input type="email" id="username" name="username" class="form-control" placeholder="Email">
+          <input type="email" id="email" name="email" class="form-control" placeholder="Email">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -137,11 +137,11 @@
                     required: true,
                     noSpace: true,
                     strictPassword: true,
-                    minlength: 8
+                    minlength: 8,
+                    maxlength: 100
                 },
                 confirm_password: {
                     required: true,
-                    minlength: 8,
                     equalTo: "#password"
                 },
                 terms: {

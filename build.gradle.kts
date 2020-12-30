@@ -16,20 +16,23 @@ repositories {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-security")
+    implementation("javax.validation:validation-api")
+//    implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
+    implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.springframework.boot:spring-boot-starter-web")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    implementation("org.thymeleaf.extras:thymeleaf-extras-springsecurity5")
+//    implementation("org.thymeleaf.extras:thymeleaf-extras-springsecurity5")
     implementation("org.springframework.boot:spring-boot-starter-data-redis")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     runtimeOnly("mysql:mysql-connector-java:5.1.49")
     testRuntimeOnly("com.h2database:h2:1.4.200")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
-    testImplementation("org.springframework.security:spring-security-test")
+//    testImplementation("org.springframework.security:spring-security-test")
+
 }
 
 tasks.withType<KotlinCompile> {

@@ -1,12 +1,14 @@
 package me.oscar.crowd.authentication
 
-import org.springframework.boot.CommandLineRunner
-import org.springframework.security.crypto.factory.PasswordEncoderFactories
 import org.springframework.stereotype.Controller
+import org.springframework.validation.Errors
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.ResponseBody
+import javax.validation.Valid
 
 @Controller
-class AuthController : CommandLineRunner {
+class AuthController {
 
     @GetMapping("/sign-in")
     fun signIn(): String {
@@ -18,10 +20,10 @@ class AuthController : CommandLineRunner {
         return "sign-up"
     }
 
-    override fun run(vararg args: String?) {
-        val encode = PasswordEncoderFactories.createDelegatingPasswordEncoder().encode("fff")
+    @PostMapping("/sign-up")
+    @ResponseBody
+    fun register(@Valid signUpForm: SignUpForm, errors: Errors): String {
 
-        println(encode)
-        println("ended")
+        return "your ${signUpForm.email} + ${signUpForm.password} ${errors.hasErrors()} ${errors.allErrors}"
     }
 }
